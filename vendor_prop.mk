@@ -221,7 +221,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.perf_hint_window=50 \
-    vendor.video.disable.ubwc=1
+    vendor.video.disable.ubwc=1 \
+    ro.min.fling_velocity=140 \
+    ro.max.fling_velocity=20000
 
 # IZat OptInApp overlay enable
 PRODUCT_PROPERTY_OVERRIDES += \
