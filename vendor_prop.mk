@@ -81,7 +81,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio.volume.headset.gain.depcal=true \
     vendor.fm.a2dp.conc.disabled=true \
-    vendor.voice.path.for.pcm.voip=true
+    vendor.voice.path.for.pcm.voip=true \
+    af.resampler.quality=7
 
 # Audio dynamic feature flags
 PRODUCT_PROPERTY_OVERRIDES += \
