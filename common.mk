@@ -157,7 +157,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl:32 \
     audio.bluetooth.default \
     btconfig \
-    bt-mac-generator \
     libbt-vendor \
     libbthost_if \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
