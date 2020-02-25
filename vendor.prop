@@ -104,6 +104,9 @@ debug.sf.disable_backpressure=1
 # Media
 vendor.vidc.debug.level=1
 
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
 # QCOM
 ro.vendor.qti.va_aosp.support=1
 
