@@ -497,7 +497,7 @@ PRODUCT_PACKAGES += \
     wifi-mac-generator
 
 PRODUCT_PACKAGES += \
-    OnePlusParts
+    PartsBin
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/fstman.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/fstman.ini \
