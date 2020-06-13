@@ -39,7 +39,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.min.duration.secs=30 \
     persist.dirac.acs.controller=qem \
     ro.dirac.acs.storeSettings=1 \
-    ro.dirac.ignore_error=1 \
+    ro.dirac.acs.ignore_error=1 \
     tunnel.audio.encode=true \
     nxpWechatDebugEnable=1 \
     persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
@@ -49,12 +49,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     af.resampler.quality=7 \
     persist.vendor.audio.fluence.speaker=true \
+    persist.audio.fluence.voicecomm=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=true \
     persist.vendor.audio.hac.enable=false \
     persist.vendor.audio.ras.enabled=false \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
-    persist.vendor.bt.a2dp_offload_cap=false \
     persist.vendor.bt.enable.splita2dp=false \
     persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-ldac-aac \
     ro.af.client_heap_size_kbyte=7168 \
@@ -62,10 +62,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=11 \
     ro.vendor.audio.sdk.fluencetype=fluencepro \
     ro.vendor.audio.sdk.ssr=false \
+    persist.vendor.bt.aac_frm_ctl.enabled=true \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.flac.sw.decoder.24bit=true \
-    vendor.audio.hw.aac.encoder=true \
     vendor.audio.noisy.broadcast.delay=600 \
     vendor.audio.offload.buffer.size.kb=64 \
     vendor.audio.offload.gapless.enabled=true \
@@ -74,15 +74,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.passthrough=false \
     vendor.audio.offload.track.enable=true \
     vendor.audio.parser.ip.buffer.size=262144 \
-    vendor.audio.safx.pbe.enabled=false \
-	vendor.audio.spkr_prot.tx.sampling_rate=48000 \
+    vendor.audio.safx.pbe.enabled=true \
+    vendor.audio.spkr_prot.tx.sampling_rate=48000 \
     vendor.audio.tunnel.encode=false \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio.volume.headset.gain.depcal=true \
+    vendor.audio.hw.aac.encoder=true \
     vendor.fm.a2dp.conc.disabled=true \
     vendor.voice.path.for.pcm.voip=true \
-    af.resampler.quality=7
+    ro.config.alarm_vol_default=10 \
+    ro.config.alarm_vol_steps=16 \
+    ro.config.media_vol_default=7 \
+    ro.config.media_vol_steps=18 \
+    ro.config.vc_call_vol_default=6 \
+    ro.config.vc_call_vol_steps=8
 
 # Audio dynamic feature flags
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -119,7 +125,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.record_play_concurency.enable=false \
     vendor.audio.feature.src_trkn.enable=true \
     vendor.audio.feature.spkr_prot.enable=true \
-    vendor.audio.feature.ssrec.enable=false \
+    vendor.audio.feature.ssrec.enable=true \
     vendor.audio.feature.usb_offload.enable=true \
     vendor.audio.feature.usb_offload_burst_mode.enable=false \
     vendor.audio.feature.usb_offload_sidetone_volume.enable=false \
@@ -127,7 +133,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.vbat.enable=true \
     vendor.audio.feature.wsa.enable=false \
     vendor.audio.feature.audiozoom.enable=false \
-    vendor.audio.feature.snd_mon.enable=false
+    vendor.audio.feature.snd_mon.enable=true
 
 # Battery
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -136,14 +142,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1 \
-	persist.bluetooth.a2dp_offload.cap=false \
-    persist.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-ldac-aac \
-    persist.bt.a2dp.aac_disable=true \
-    persist.vendor.btstack.enable.splita2dp=false \
-    vendor.qcom.bluetooth.soc=cherokee \
     persist.vendor.bluetooth.a4wp=false \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
+    ro.vendor.bluetooth.wipower=false \
     vendor.bluetooth.emb_wp_mode=false \
-    vendor.bluetooth.wipower=false
+    vendor.hw.fm.init=0 \
+    vendor.qcom.bluetooth.soc=cherokee
 
 # Cabl
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -181,7 +185,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # 0 = disable
 # 9 = enable FD , TCM , disable CT , NSRM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.dpm.feature=9
+    persist.vendor.dpm.feature=0
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -202,8 +206,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.gralloc.gfx_ubwc_enable=1 \
     debug.sf.disable_backpressure=1 \
     debug.sf.enable_hwc_vds=1 \
-    debug.sf.latch_unsignaled=0 \
-    debug.gralloc.enable_fb_ubwc=1 \
+    debug.sf.latch_unsignaled=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     persist.debug.wfd.enable=1 \
@@ -213,6 +216,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sdm.debug.disable_skip_validate=1 \
     sdm.debug.rotator_downscale=1 \
     sdm.perf_hint_window=0 \
+    ro.hardware.vulkan=adreno \
+    ro.hardware.egl=adreno \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.gralloc.disable_ubwc=0 \
     vendor.gralloc.disable_wb_ubwc=1 \
@@ -254,20 +259,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=true \
     vendor.vidc.debug.level=1 \
     vendor.swvdec.log.level=1 \
-    # 13631487 is decimal sum of supported codecs in AAL
-    # codecs: (PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV
-    # 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD
-    #mm.enable.qcom_parser=13631487
-    # VENDOR_EDIT Add codecs:DIVX & DIVXHD
-    # if temporary OGG is removed
-    # mm.enable.qcom_parser=16760831
-    mm.enable.qcom_parser=16777215
+    vendor.mm.enable.qcom_parser=67092479 \
+    vendor.vidc.enc.disable.pq=true
+
+# Network
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.netmon.linger=5000
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.nfc_nci=nqx.default \
     ro.nfc.port=I2C \
-    persist.nfc.smartcard.config=SIM1,eSE1
+    persist.nfc.smartcard.config=SIM1,eSE1 \
+    ro.boot.product.hardware.sku=ese \
+    persist.vendor.nfc.delayese=true
 
 # OTG support
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -327,7 +332,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.VT_CAM_INTERFACE=1 \
     persist.radio.VT_ENABLE=1 \
     persist.radio.VT_HYBRID_ENABLE=1 \
-    persist.rcs.supported=1 \
+    persist.rcs.supported=0 \
     persist.rild.nitz_long_ons_0="" \
     persist.rild.nitz_long_ons_1="" \
     persist.rild.nitz_long_ons_2="" \
@@ -339,22 +344,27 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_3="" \
     ro.telephony.use_old_mnc_mcc_format=true \
     ro.telephony.iwlan_operation_mode=legacy \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.sys.oem_smooth=1 \
+    persist.vendor.ims.disableADBLogs=1 \
     persist.vendor.ims.dropset_feature=0 \
     persist.vendor.qti.telephony.vt_cam_interface=1 \
+    persist.vendor.radio.5g_mode_pref=0 \
     persist.vendor.radio.add_power_save=1 \
+    ro.com.android.dataroaming=false \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.arfcn_test_mode=3 \
     persist.vendor.radio.bar_fake_gcell=1 \
     persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.procedure_bytes=SKIP \
-    persist.vendor.radio.aosp_usr_pref_sel=true \
-    persist.vendor.radio.flexmap_type=none \
     persist.vendor.radio.data_con_rprt=1 \
     persist.vendor.radio.data_ltd_sys_ind=1 \
-    persist.vendor.radio.force_on_dc=true \
+    persist.vendor.radio.enableadvancedscan=true \
+    persist.vendor.radio.enhance_ecall=true \
+    persist.vendor.radio.flexmap_type=none \
     persist.vendor.radio.ignore_dom_time=10 \
+    persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.rat_on=combine \
+    persist.vendor.radio.sap_silent_pin=1 \
     persist.vendor.radio.sib16_support=1 \
     ril.ecclist="112,911,999,*911" \
     ril.ecclist1="911,112,999,*911,991,994" \
@@ -364,6 +374,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=22,20 \
     telephony.lteOnCdmaDevice=1,1 \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+    persist.vendor.radio.uicc_se_enabled=false \
+    persist.vendor.radio.sw_mbn_update=0 \
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -377,6 +389,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.iwlan_mux=9 \
     persist.data.df.dev_name=rmnet_usb0 \
     persist.vendor.data.iwlan.enable=true
+
+# Sdcard
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.fuse_sdcard=true
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -427,42 +443,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.rndis.func.name=gsi \
     sys.usb.rmnet.func.name=gsi
 
-# VoLTE/VoWifi options
+# Vendor
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.va_aosp.support=1
+
+# VoLTE
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.ims_volte_enable=1 \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1
-
-# VNDK
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.vndk.version=28
-
-# VoLTE
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.ims.dropset_feature=0 \
-    persist.vendor.radio.add_power_save=1 \
-    persist.vendor.radio.force_on_dc=true \
-    persist.radio.custom_ecc=1 \
-    persist.radio.data_con_rprt=1 \
-    persist.radio.data_ltd_sys_ind=1 \
-    persist.radio.ignore_dom_time=10 \
-    persist.radio.rat_on=combine \
-    persist.radio.sib16_support=1 \
-    persist.radio.RATE_ADAPT_ENABLE=1 \
-    persist.radio.ROTATION_ENABLE=1 \
-    persist.radio.VT_ENABLE=1 \
-    persist.radio.VT_HYBRID_ENABLE=1 \
-    persist.radio.is_wps_enabled=true \
-    persist.radio.videopause.mode=1 \
-    persist.radio.sap_silent_pin=1 \
-    persist.radio.always_send_plmn=true \
-    persist.rcs.supported=0 \
-    persist.dbg.ims_volte_enable=1 \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=1 \
-    persist.radio.calls.on.ims=1
 
 # Wi-Fi
 PRODUCT_PROPERTY_OVERRIDES += \
