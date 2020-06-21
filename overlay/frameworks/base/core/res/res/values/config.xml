@@ -776,4 +776,8 @@
 
    <!-- Should we filter any display modes which are unampped? -->
    <bool name="config_filterDisplayModes">true</bool>
+
+    <!-- Flag indicating whether we should enable the adaptive sleep.-->
+    <bool name="config_adaptive_sleep_available">true</bool>
+
 </resources>
