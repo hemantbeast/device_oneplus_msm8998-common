@@ -29,8 +29,6 @@ PLATFORM_PATH := device/oneplus/msm8998-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
-BOARD_VENDOR := oneplus
-
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
