@@ -125,9 +125,6 @@ WITH_LINEAGE_CHARGER := false
 # CNE and DPM
 BOARD_USES_QCNE := true
 
-# Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-
 # Display
 BOARD_USES_ADRENO := true
 TARGET_USES_HWC2 := true
@@ -172,9 +169,6 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus_msm8998
 
 # IPA
 TARGET_USES_NO_MTU_IPACM := true
-
-# Keystore
-TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
