@@ -271,6 +271,12 @@
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
+    <!-- Does the device supports fast charging -->
+    <bool name="config_FastChargingLedSupported">true</bool>
+
+    <!-- Does the device supports Smart Battery -->
+    <bool name="config_smart_battery_available">true</bool>
+
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
         <item>0</item>
@@ -429,6 +435,13 @@
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
 
+    <!-- Indicate whether to allow the device to suspend when the screen is off
+         due to the proximity sensor.  This resource should only be set to true
+         if the sensor HAL correctly handles the proximity sensor as a wake-up source.
+         Otherwise, the device may fail to wake out of suspend reliably.
+         The default is false. -->
+    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+
     <!-- Is the device capable of hot swapping an ICC Card -->
     <bool name="config_hotswapCapable">true</bool>
 
@@ -477,6 +490,21 @@
           turned off and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">true</bool>
 
+    <!-- Power Management: Specifies whether to decouple the interactive state of the
+         device from the display on/off state.
+         When false, setInteractive(..., true) will be called before the display is turned on
+         and setInteractive(..., false) will be called after the display is turned off.
+         This mode provides best compatibility for devices that expect the interactive
+         state to be tied to the display state.
+         When true, setInteractive(...) will be called independently of whether the display
+         is being turned on or off.  This mode enables the power manager to reduce
+         clocks and disable the touch controller while the display is on.
+         This resource should be set to "true" when a doze component has been specified
+         to maximize power savings but not all devices support it.
+         Refer to power.h for details.
+    -->
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
@@ -488,14 +516,29 @@
          Doze dreams will run whenever the power manager is in a dozing state. -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
-    <!-- Control whether the always on display mode is available. This should only be enabled on
-         devices where the display has been tuned to be power efficient in DOZE and/or DOZE_SUSPEND
+   <!-- Control whether the always on display mode is available. This should only be enabled on
+         devices where the display has be tuned to be power efficient in DOZE and/or DOZE_SUSPEND
          states. -->
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 
-    <!-- Control whether the always on display mode is enabled by default. This value will be used
-         during initialization when the setting is still null. -->
+    <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
+    <bool name="config_displayBlanksAfterDoze">false</bool> 
+
+    <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
+    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
+
+    <!-- Set AOD off by default -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
+
+    <!-- Whether device supports wake screen gesture for AD pulse -->
+    <bool name="config_dozeWakeLockScreenSensorAvailable">true</bool>
+    <!-- Whether device supports sensor based doze customizations -->
+    <bool name="config_dozePulseTilt">true</bool>
+    <bool name="config_dozePulseProximity">true</bool>
+    <bool name="config_deviceHaveWakeUpProximity">true</bool>
+
+    <!-- Specifies whether to decouple the auto-suspend state of the device from the display on/off state. -->
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
     <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
@@ -601,11 +644,6 @@
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
 
-    <!-- Control whether Night display is available. This should only be enabled on devices
-         that have a HWC implementation that can apply the matrix passed to setColorTransform
-         without impacting power, performance, and app compatibility (e.g. protected content). -->
-    <bool name="config_nightDisplayAvailable">false</bool>
-
     <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
     <bool name="config_dynamic_bind_ims">true</bool>
 
@@ -636,18 +674,6 @@
 
     <!-- Whether device has dash charging support -->
     <bool name="config_hasDashCharger">true</bool>
-
-    <!-- Whether the device supports Smart Pixels -->
-    <bool name="config_supportSmartPixels">true</bool>
-
-    <!-- Whether device supports sensor based doze customizations -->
-    <bool name="config_dozePulsePickup">true</bool>
-    <bool name="config_dozePulseTilt">true</bool>
-    <bool name="config_dozePulseProximity">true</bool>
-    <bool name="config_deviceHaveWakeUpProximity">true</bool>
-
-    <!-- Smart charging -->
-    <bool name="config_smartChargingAvailable">true</bool>
 
     <!-- Whether device has physical tri state switch -->
     <bool name="config_hasAlertSlider">true</bool>
