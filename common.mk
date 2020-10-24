@@ -390,6 +390,10 @@ PRODUCT_PACKAGES += \
     libstagefright_softomx \
     libstagefrighthw
 
+# PartsBin
+PRODUCT_PACKAGES += \
+    PartsBin
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service-qti
