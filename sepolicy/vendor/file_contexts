@@ -25,6 +25,12 @@
 # Display
 /(product|system/product)/(lib|lib64)/vendor\.display\.config@1\.[0-9]\.so   u:object_r:same_process_hal_file:s0
 
+# Display Mode
+/sys/devices/virtual/graphics/fb0/srgb           u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/dci_p3         u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/oneplus_mode   u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/measured_fps   u:object_r:sysfs_dm:s0
+
 # DRM
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.drmkey@1\.0-service    u:object_r:hal_drm_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.hdcpkey@1\.0-service   u:object_r:hal_hdcpkey_default_exec:s0
@@ -52,6 +58,9 @@
 /dev/param                u:object_r:param_device:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.param@1\.0-service    u:object_r:hal_param_default_exec:s0
 
+# PartsBin
+/sys/kernel/fast_charge/force_fast_charge                       u:object_r:sysfs_fastcharge:s0
+
 # Power supply
 /sys/devices/soc/.*ssusb/power_supply/usb(/.*)?                 u:object_r:sysfs_usb_supply:s0
 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/main(/.*)?       u:object_r:sysfs_usb_supply:s0
@@ -59,6 +68,10 @@
 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/dc(/.*)?         u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
+
+# QuickSettings SystemInfo
+/sys/class/thermal/thermal_zone0/temp                           u:object_r:sysfs_device_info:s0
+/sys/class/power_supply/battery/temp                            u:object_r:sysfs_device_info:s0
 
 # Ril
 /data/vendor/oemnvitems(/.*)?                                   u:object_r:vendor_radio_data_file:s0
@@ -78,6 +91,8 @@
 
 /firmware(/.*)?                                                 u:object_r:firmware_file:s0
 /bt_firmware(/.*)?                                              u:object_r:bt_firmware_file:s0
+
+/sys/kernel/pocket_judge/inpocket                               u:object_r:sysfs_inpocket:s0
 
 # Thermal
 /data/vendor/thermal(/.*)?                                      u:object_r:thermal_data_file:s0
