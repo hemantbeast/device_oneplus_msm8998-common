@@ -16,13 +16,13 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aicpextras="http://schemas.android.com/apk/res-auto">
-<!--
+
     <com.aicp.gear.preference.SystemSettingSwitchPreference
         android:key="pulse_on_new_tracks"
         android:defaultValue="false"
         android:summary="@string/pulse_on_new_tracks_summary"
         android:title="@string/pulse_on_new_tracks_title" />
--->
+
     <PreferenceCategory
         android:key="double_tap"
         android:title="@string/double_tap_title" >
@@ -67,7 +67,7 @@
             android:icon="@drawable/ic_pocket" />
 
     </PreferenceCategory>
-<!--
+
     <PreferenceCategory
         android:key="ambient_light"
         android:title="@string/pulse_ambient_light_enable_title">
@@ -126,5 +126,5 @@
             android:summary="@string/pulse_ambient_light_repeat_direction_summary"
             android:dependency="pulse_ambient_light" />
     </PreferenceCategory>
--->
+
 </PreferenceScreen>
