@@ -22,10 +22,7 @@
 # definition file).
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
-
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 
 $(call inherit-product, vendor/oneplus/msm8998-common/msm8998-common-vendor.mk)
 
@@ -544,3 +541,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
