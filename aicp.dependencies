@@ -1,6 +1,22 @@
 [
   {
-    "repository": "kernel_oneplus_msm8998",
-    "target_path": "kernel/oneplus/msm8998"
+    "repository":  "hemantbeast/kernel_oneplus_msm8998",
+    "target_path": "kernel/oneplus/msm8998",
+    "branch":      "q10.0"
+  },
+  {
+    "repository":  "hemantbeast/proprietary_vendor_oneplus",
+    "target_path": "vendor/oneplus",
+    "branch":      "q10.0"
+  },
+  {
+    "repository":  "AICP/packages_apps_PartsBin",
+    "target_path": "packages/apps/PartsBin",
+    "branch":      "q10.0"
+  },
+  {
+    "repository":  "AICP/packages_resources_deviceparts",
+    "target_path": "packages/resources/deviceparts",
+    "branch":      "q10.0"
   }
 ]
