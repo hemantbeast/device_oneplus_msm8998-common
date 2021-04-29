@@ -125,8 +125,7 @@ ro.charger.enable_suspend=true
 dalvik.vm.dex2oat64.enabled=true
 
 # Data
-persist.vendor.data.mode=concurrent
-ro.vendor.use_data_netmgrd=true
+persist.vendor.data.iwlan.enable=true
 
 # DPM
 persist.vendor.dpm.loglevel=0
@@ -179,9 +178,6 @@ persist.mm.enable.prefetch=true
 vidc.enc.dcvs.extra-buff-count=2
 vendor.vidc.enc.disable.pq=true
 persist.media.treble_omx=true
-
-# Network manager
-persist.vendor.data.iwlan.enable=true
 
 # NFC
 ro.hardware.nfc_nci=nqx.default
