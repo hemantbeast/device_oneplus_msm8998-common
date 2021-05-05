@@ -217,8 +217,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libqdMetaData.system \
     libqdMetaData.vendor \
-    libtinyxml \
-    libvulkan
+    libtinyxml
 
 PRODUCT_PACKAGES += \
     vendor.display.config@2.0.vendor \
@@ -505,11 +504,6 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service
 
 # VNDK
-# Update this list with what each blob is actually for
-# libstdc++: camera.msm8998
-PRODUCT_PACKAGES += \
-    libstdc++.vendor
-
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libcutils-v29.so
 
