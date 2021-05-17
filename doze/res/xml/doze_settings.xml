@@ -39,11 +39,12 @@
         android:key="tilt_sensor"
         android:title="@string/tilt_sensor_title">
 
-        <com.aicp.gear.preference.SecureSettingSwitchPreference
+        <com.aicp.gear.preference.SecureSettingListPreference
             android:key="doze_tilt_gesture"
-            android:defaultValue="false"
+            android:defaultValue="0"
             android:title="@string/pick_up_gesture_title"
-            android:summary="@string/pick_up_gesture_summary"
+            android:entries="@array/pick_up_gesture_entries"
+            android:entryValues="@array/pick_up_gesture_values"
             android:icon="@drawable/ic_pickup" />
 
     </PreferenceCategory>

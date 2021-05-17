@@ -22,6 +22,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.util.Log;
 
@@ -32,17 +34,23 @@ public class TiltSensor implements SensorEventListener {
 
     private static final int BATCH_LATENCY_IN_MS = 100;
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
+    private static final int MIN_WAKEUP_INTERVAL_MS = 1000;
+    private static final int WAKELOCK_TIMEOUT_MS = 300;
 
+    private PowerManager mPowerManager;
     private SensorManager mSensorManager;
     private Sensor mSensor;
+    private WakeLock mWakeLock;
     private Context mContext;
 
     private long mEntryTimestamp;
 
     public TiltSensor(Context context) {
         mContext = context;
+        mPowerManager = mContext.getSystemService(PowerManager.class);
         mSensorManager = mContext.getSystemService(SensorManager.class);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
+        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
     }
 
     @Override
@@ -52,12 +60,18 @@ public class TiltSensor implements SensorEventListener {
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
         if (delta < MIN_PULSE_INTERVAL_MS) {
             return;
-        } else {
-            mEntryTimestamp = SystemClock.elapsedRealtime();
         }
 
+        mEntryTimestamp = SystemClock.elapsedRealtime();
+
         if (event.values[0] == 1) {
-            Utils.launchDozePulse(mContext);
+            if (Utils.isPickUpSetToWake(mContext)) {
+                mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
+                mPowerManager.wakeUp(SystemClock.uptimeMillis(),
+                        PowerManager.WAKE_REASON_GESTURE, TAG);
+            } else {
+                Utils.launchDozePulse(mContext);
+            }
         }
     }
 

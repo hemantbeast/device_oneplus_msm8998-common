@@ -102,6 +102,11 @@ public final class Utils {
         return isGestureEnabled(context, GESTURE_PICK_UP_KEY);
     }
 
+    protected static boolean isPickUpSetToWake(Context context) {
+        return Settings.Secure.getInt(context.getContentResolver(),
+                GESTURE_PICK_UP_KEY, 0) == 2;
+    }
+
     protected static boolean isHandwaveGestureEnabled(Context context) {
         return isGestureEnabled(context, GESTURE_HAND_WAVE_KEY);
     }
