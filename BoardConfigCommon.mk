@@ -31,9 +31,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 BOARD_VENDOR := oneplus
 
-# we are too big to fit in
-PRODUCT_SKIP_FINGERPRINT_FROM_FILE := true
-
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
@@ -259,7 +256,6 @@ BOARD_VNDK_VERSION := current
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
-BOARD_HAS_QCOM_WLAN_SDK := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
