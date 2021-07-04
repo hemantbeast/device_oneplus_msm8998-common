@@ -30,6 +30,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/google/google.mk)
 $(call inherit-product, vendor/oneplus/msm8998-common/msm8998-common-vendor.mk)
+$(call inherit-product, vendor/addons/onepluscamera/config.mk)
 
 # Component overrides
 PRODUCT_COPY_FILES += \
