@@ -1,5 +1,4 @@
-allow hal_bluetooth_qti vendor_radio_data_file:dir { search };
-allow hal_bluetooth_qti vendor_radio_data_file:file { r_file_perms };
+allow hal_bluetooth_qti oem_nv_bt_data_file:file { r_file_perms };
 
 diag_use(hal_bluetooth_qti)
 
