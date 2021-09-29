@@ -241,6 +241,10 @@ persist.sys.oiface.enable=0
 persist.sys.hardcoder.name=oiface
 persist.sys.oiface.feature=oiface:0xF,oifaceim:ffffffff
 
+# Soc
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=MSM8998
+
 # USB
 sys.usb.controller=a800000.dwc3
 sys.usb.rndis.func.name=gsi
