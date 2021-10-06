@@ -1,6 +1,3 @@
-# Audio
-vendor/etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt
-
 # Alipay
 -priv-app/IFAAService/IFAAService.apk|9b33bb59459c202b7e9777cc763febc7ef0d58a1
 lib/libteeclientjni.so|da490d23cde054e3b99ee6790d1faf26a20854a3
