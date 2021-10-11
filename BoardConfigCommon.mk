@@ -215,8 +215,6 @@ VENDOR_SECURITY_PATCH := 2020-09-01
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/public
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
 
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
