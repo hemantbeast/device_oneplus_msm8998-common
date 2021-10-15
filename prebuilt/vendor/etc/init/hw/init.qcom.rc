@@ -213,6 +213,9 @@ on boot
     # chmod sns.reg file user and group for sensor
     chown system system /mnt/vendor/persist/sensors/sns.reg
 
+    start vendor.qcrild
+    start vendor.qcrild2
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
@@ -607,20 +610,6 @@ service vendor.wigig_hostapd /vendor/bin/hw/hostapd -dd  -j wigighostapd /data/v
     group wifi inet keystore
     oneshot
     disabled
-
-service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
-    class main
-    user radio
-    disabled
-    group radio cache inet misc audio log readproc wakelock oem_2901
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-
-service vendor.ril-daemon3 /vendor/bin/hw/rild -c 3
-    class main
-    user radio
-    disabled
-    group radio cache inet misc audio log readproc wakelock oem_2901
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 service charger /system/bin/charger
     class charger
