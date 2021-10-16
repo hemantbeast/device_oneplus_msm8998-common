@@ -22,15 +22,14 @@
 # definition file).
 #
 
-BUILD_BROKEN_DUP_RULES := true
-BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
-
 PLATFORM_PATH := device/oneplus/msm8998-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
-# Use Snapdragon LLVM, if available
-TARGET_USE_SDCLANG := true
+# Broken
+BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8998
