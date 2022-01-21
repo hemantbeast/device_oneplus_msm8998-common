@@ -23,7 +23,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
     <permission
         android:name="com.android.touch.gestures.TRIGGER_SCREEN_OFF_GESTURE"
@@ -132,10 +131,5 @@
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
             </intent-filter>
         </provider>
-
-        <service
-            android:name=".KeyHandler"
-            android:permission="KeyHandlerService"
-            android:exported="false" />
     </application>
 </manifest>
