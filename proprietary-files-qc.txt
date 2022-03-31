@@ -330,9 +330,9 @@ vendor/lib/libmmcamera_isp_snr47.so
 vendor/lib/libmmcamera_isp_sub_module.so
 
 # CNE
--vendor/app/CneApp/CneApp.apk
--vendor/app/CACertService/CACertService.apk
--vendor/app/IWlanService/IWlanService.apk
+vendor/app/CneApp/CneApp.apk
+vendor/app/CACertService/CACertService.apk
+vendor/app/IWlanService/IWlanService.apk
 vendor/bin/adpl
 vendor/bin/cnd
 vendor/etc/cacert_location.pem
@@ -402,7 +402,7 @@ product/lib64/libdpmctmgr.so:system_ext/lib64/libdpmctmgr.so
 product/lib64/libdpmfdmgr.so:system_ext/lib64/libdpmfdmgr.so
 product/lib64/libdpmframework.so:system_ext/lib64/libdpmframework.so
 product/lib64/libdpmtcm.so:system_ext/lib64/libdpmtcm.so
--product/priv-app/dpmserviceapp/dpmserviceapp.apk:system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
+product/priv-app/dpmserviceapp/dpmserviceapp.apk:system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 system_ext/bin/dpmd|90cdd79b564456cef2a0c011afab3896463df5e4
 vendor/bin/dpmQmiMgr
 vendor/etc/init/dpmQmiMgr.rc
@@ -514,7 +514,7 @@ vendor/bin/slim_daemon|b0723d5bb6b6128564ce511de7eb1f38725e6bd4
 vendor/bin/xtra-daemon|dba903f7414a945a74a9f2036aba69e7e4e7b04a
 vendor/bin/xtwifi-client|8c4c21cd92611b0a1ff621a2da159c778bd1d7d7
 vendor/bin/xtwifi-inet-agent|f805841e5c8ca3b0af620486a64a37148daa0980
--vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml|6514b13f55abc0acc28e004c35ff93fb972d61a9
+vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml|6514b13f55abc0acc28e004c35ff93fb972d61a9
 vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
 vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so|1f72539f1e36b4b8ccdba84d11b454f0cfe1e6f7
 vendor/lib64/libcdfw_remote_api.so|dc7deb7618f05907ecfd2c3004bb3e0c39ec8522
@@ -729,7 +729,7 @@ vendor/lib64/libdisp-aba.so
 vendor/lib/libdisp-aba.so
 
 # PowerOffAlarm
--product/app/PowerOffAlarm/PowerOffAlarm.apk|0f62d301fee30e5ae8baf33566c0839f46865649
+product/app/PowerOffAlarm/PowerOffAlarm.apk|0f62d301fee30e5ae8baf33566c0839f46865649
 product/framework/vendor.qti.hardware.alarm-V1.0-java.jar
 product/lib64/vendor.qti.hardware.alarm@1.0.so
 product/lib/vendor.qti.hardware.alarm@1.0.so
@@ -787,12 +787,12 @@ vendor/lib/libqmi.so
 vendor/lib/libqmiservices.so
 
 # Radio
--product/app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+product/app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 product/etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml:system_ext/etc/permissions/telephonyservice.xml
 product/framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephonyServicelibrary.jar
 product/framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar
--product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 system_ext/framework/qti-telephony-common.jar|14e32b1cb0fdc9d7802414e95e41376499b51b11
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
@@ -891,8 +891,8 @@ vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 
 # Radio - IMS
--product/app/imssettings/imssettings.apk:system_ext/app/imssettings/imssettings.apk
--product/app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
+product/app/imssettings/imssettings.apk:system_ext/app/imssettings/imssettings.apk
+product/app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
 product/lib64/com.qualcomm.qti.imscmservice@1.0.so:system_ext/lib64/com.qualcomm.qti.imscmservice@1.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.0.so:system_ext/lib64/com.qualcomm.qti.imscmservice@2.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.1.so:system_ext/lib64/com.qualcomm.qti.imscmservice@2.1.so
@@ -917,7 +917,7 @@ product/lib64/vendor.qti.ims.rcsconfig@1.0.so:system_ext/lib64/vendor.qti.ims.rc
 product/lib64/vendor.qti.ims.rcsconfig@1.1.so:system_ext/lib64/vendor.qti.ims.rcsconfig@1.1.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so:system_ext/lib64/vendor.qti.imsrtpservice@2.0.so
 product/lib64/vendor.qti.imsrtpservice@2.1.so:system_ext/lib64/vendor.qti.imsrtpservice@2.1.so
--system_ext/priv-app/ims/ims.apk|7aff4613e75dfe90363409cf649e2a3e09469921
+system_ext/priv-app/ims/ims.apk|7aff4613e75dfe90363409cf649e2a3e09469921
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -1003,7 +1003,7 @@ vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 
 # Soter
--app/SoterService/SoterService.apk
+app/SoterService/SoterService.apk
 product/framework/vendor.qti.hardware.soter-V1.0-java.jar
 product/lib64/vendor.qti.hardware.soter@1.0.so
 product/lib/vendor.qti.hardware.soter@1.0.so
@@ -1030,7 +1030,7 @@ vendor/lib64/libthermalioctl.so
 -vendor/lib/libthermalclient.so
 
 # Time services
--vendor/app/TimeService/TimeService.apk
+vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 -vendor/lib/libtime_genoff.so
