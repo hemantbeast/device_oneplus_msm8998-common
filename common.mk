@@ -28,7 +28,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 $(call inherit-product, vendor/oneplus/msm8998-common/msm8998-common-vendor.mk)
-$(call inherit-product, vendor/addons/onepluscamera/config.mk)
 
 # APEX
 PRODUCT_COMPRESSED_APEX := false
@@ -294,8 +293,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
 
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
+#PRODUCT_BOOT_JARS += \
+#    org.ifaa.android.manager
 
 # IPv6
 PRODUCT_PACKAGES += \
