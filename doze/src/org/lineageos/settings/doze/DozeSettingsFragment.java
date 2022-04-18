@@ -93,7 +93,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mEdgeLightColorPref = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
         mEdgeLightColorPref.setOnPreferenceChangeListener(this);
         int edgeLightColorMode = Settings.System.getIntForUser(getActivity().getContentResolver(),
-                Settings.System.PULSE_AMBIENT_LIGHT_COLOR_MODE, 1, UserHandle.USER_CURRENT);
+                Settings.Secure.PULSE_AMBIENT_LIGHT_COLOR_MODE, 1, UserHandle.USER_CURRENT);
         updateColorPrefs(edgeLightColorMode);
 
         // Hide proximity sensor related features if the device doesn't support them
