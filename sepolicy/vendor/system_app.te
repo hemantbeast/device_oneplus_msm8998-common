@@ -13,6 +13,10 @@ allow system_app sysfs_audiogain:file rw_file_perms;
 allow system_app proc_flicker_free:dir search;
 allow system_app proc_flicker_free:file rw_file_perms;
 
+# Live display
+allow system_app sysfs_livedisplay_tuneable:dir search;
+allow system_app sysfs_livedisplay_tuneable:file rw_file_perms;
+
 # Access rules for reading battery health
 allow system_app sysfs_battery_supply:dir search;
 allow system_app sysfs_battery_supply:file r_file_perms;
