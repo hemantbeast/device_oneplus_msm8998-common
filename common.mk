@@ -396,11 +396,6 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
-# Tri-state-key
-PRODUCT_PACKAGES += \
-    OneplusParts \
-    TouchGestures
-
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
