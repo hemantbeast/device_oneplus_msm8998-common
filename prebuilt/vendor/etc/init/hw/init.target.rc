@@ -221,7 +221,7 @@ service energy-awareness /vendor/bin/energy-awareness
     group system
     oneshot
 
-service dashd /vendor/xbin/dashd
+service dashd /vendor/bin/dashd
      class core
      critical
      seclabel u:r:dashd:s0

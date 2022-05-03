@@ -20,7 +20,7 @@ lib64/vendor.oneplus.camera.CameraHIDL@1.0.so
 lib64/vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper.so
 
 # Dash
-vendor/xbin/dashd
+vendor/xbin/dashd:vendor/bin/dashd
 
 # Display calib
 vendor/etc/qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
