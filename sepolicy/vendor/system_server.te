@@ -1,0 +1,8 @@
+# Battery
+allow system_server sysfs_battery_supply:file { r_file_perms };
+
+# Vibrator
+allow system_server sysfs_vibrator:file { r_file_perms };
+
+# HBM
+allow system_server sysfs_dm:file { rw_file_perms };
