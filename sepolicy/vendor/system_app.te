@@ -1,0 +1,18 @@
+# Access rules for display modes
+allow system_app sysfs_graphics:dir search;
+allow system_app sysfs_dm:file { getattr open read write };
+
+# Access rules for forcing fastcharge
+allow system_app sysfs_fastcharge:dir { search };
+allow system_app sysfs_fastcharge:file { rw_file_perms };
+
+allow system_app sysfs_audiogain:dir { search };
+allow system_app sysfs_audiogain:file { rw_file_perms };
+
+# Access rules for reading battery health
+allow system_app sysfs_battery_supply:dir { search };
+allow system_app sysfs_battery_supply:file { r_file_perms };
+
+# Access rules for vibrator strength
+allow system_app sysfs_vibrator:dir { search };
+allow system_app sysfs_vibrator:file { rw_file_perms };

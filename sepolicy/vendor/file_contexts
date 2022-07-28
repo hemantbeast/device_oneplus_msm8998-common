@@ -9,6 +9,15 @@
 # Devices
 /dev/dash                                                       u:object_r:dash_device:s0
 
+# Display Mode
+/sys/devices/virtual/graphics/fb0/srgb                           u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/adobe_rgb                      u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/hbm                            u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/night_mode                     u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/dci_p3                         u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/oneplus_mode                   u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/measured_fps                   u:object_r:sysfs_dm:s0
+
 # Fingerprint
 /data/system/users/0/fpdata(/.*)?                               u:object_r:fingerprintd_data_file:s0
 
@@ -37,3 +46,12 @@
 
 # Root symlink
 /persist                                                        u:object_r:mnt_vendor_file:s0
+
+# Sysfs
+/sys/devices/soc/8c0000.qcom,msm-cam/video4linux(/.*)?          u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb0(/.*)?                         u:object_r:sysfs_graphics:s0
+
+# QuickSettings SystemInfo
+/sys/class/thermal/thermal_zone0/temp                           u:object_r:sysfs_device_info:s0
+/sys/class/power_supply/battery/temp                            u:object_r:sysfs_device_info:s0
+/sys/kernel/fast_charge/force_fast_charge                       u:object_r:sysfs_fastcharge:s0
