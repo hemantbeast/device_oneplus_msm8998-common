@@ -39,7 +39,7 @@ import lineageos.hardware.LineageHardwareManager; // Need sdk support
 import lineageos.hardware.TouchscreenGesture; // Need sdk support
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.collapsingtoolbar.R;
+import com.android.settingslib.widget.R;
 
 import java.lang.System;
 
