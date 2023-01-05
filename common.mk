@@ -207,6 +207,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.radio.sh \
+    init.rice.rc \
     ueventd.qcom.rc
 
 # IFAA (Fingerprint support for Alipay)
@@ -383,7 +384,8 @@ PRODUCT_PACKAGES += \
 
 # Tri-state-key
 PRODUCT_PACKAGES += \
-    KeyHandler
+    OneplusParts \
+    TouchGestures
 
 # Trust HAL
 PRODUCT_PACKAGES += \
