@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.spark.device.DeviceSettings;
+package com.lineageos.device.DeviceSettings;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -24,7 +24,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
 
-import com.spark.device.DeviceSettings.ModeSwitch.HBMModeSwitch;
+import com.lineageos.device.DeviceSettings.ModeSwitch.HBMModeSwitch;
 
 public class HBMModeService extends Service {
 

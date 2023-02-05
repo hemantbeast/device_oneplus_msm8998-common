@@ -15,16 +15,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.spark.device.DeviceSettings.ModeSwitch;
+package com.lineageos.device.DeviceSettings.ModeSwitch;
 
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
-import com.spark.device.DeviceSettings.Utils;
+import com.lineageos.device.DeviceSettings.Utils;
 
-public class AdaptiveModeSwitch implements OnPreferenceChangeListener {
+public class OnePlusModeSwitch implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/sys/devices/virtual/graphics/fb0/adaption_mode";
+    private static final String FILE = "/sys/devices/virtual/graphics/fb0/oneplus_mode";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {

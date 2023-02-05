@@ -1,4 +1,4 @@
-package com.spark.device.DeviceSettings;
+package com.lineageos.device.DeviceSettings;
 
 import android.app.Activity;
 import android.app.KeyguardManager;
