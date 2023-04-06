@@ -21,7 +21,7 @@ drm.service.enabled=true
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # Graphics
-debug.renderengine.backend=skiaglthreaded
+debug.renderengine.backend=threaded
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_hwc_vds=0
 debug.sf.hw=1
