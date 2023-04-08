@@ -155,4 +155,7 @@ void vendor_load_properties() {
     LOG(INFO) << "Loading vendor specific properties";
     init_alarm_boot_properties();
     init_dalvik_vm_properties();
+
+    property_override("ro.rice.chipset", "Snapdragon 835");
+    property_override("ro.rice.maintainer", "Hemant Sharma (hemantbeast)");
 }
