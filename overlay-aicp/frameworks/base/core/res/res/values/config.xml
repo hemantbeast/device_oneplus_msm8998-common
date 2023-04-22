@@ -69,11 +69,13 @@
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_supportSmartPixels">true</bool>
 
-    <!-- Fingerprint from a certified device against current platform SPL level -->
-    <string name="config_certifiedFingerprint" translatable="false">google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys</string>
-
-    <!-- Model from a certified device -->
-    <string name="config_certifiedModel" translatable="false">Pixel 2</string>
+    <!-- Build properties from a GMS certified device against current platform SPL level -->
+    <string-array name="config_certifiedBuildProperties" translatable="false">
+        <item>walleye</item>   <!-- Build.DEVICE -->
+        <item>walleye</item>   <!-- Build.PRODUCT -->
+        <item>Pixel 2</item> <!-- Build.MODEL -->
+        <item>google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys</item> <!-- Build.FINGERPRINT -->
+    </string-array>
 
     <!-- The list of package IDs that are allowed to use aux cameras.
          NOTE: If this list is empty then all apps will be able to use aux cameras. -->
