@@ -41,9 +41,20 @@
     <integer name="audioHeadphoneGainMax">20</integer>
     <integer name="audioHeadphoneGainDefault">0</integer>
 
+    <!-- Device backlight dimmer path -->
+    <string name="pathBacklightDimmer">/proc/flicker_free/flicker_free</string>
+
     <!-- Device fps path -->
     <string name="pathfpsInfo">/sys/devices/virtual/graphics/fb0/measured_fps</string>
 
     <!-- Device usb fast charge path -->
     <string name="pathUsbFastCharge">/sys/kernel/fast_charge/force_fast_charge</string>
+
+    <!-- System vibration sysfs node path -->
+    <string name="pathSystemVibStrength">/sys/class/leds/vibrator/vmax_mv</string>
+
+    <!-- Device vibrator min-max-default values -->
+    <integer name="vibratorMinMV">120</integer>
+    <integer name="vibratorMaxMV">1800</integer>
+    <integer name="vibratorDefaultMV">1600</integer>
 </resources>
