@@ -554,4 +554,8 @@
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>com.aurora.device.DeviceSettings.KeyHandler</item>
     </string-array>
+    
+    <!-- Whether to handle audio direction changes between major call states -->
+    <bool name="config_handleAudioDirectionChangesBetweenCallStateChanges">false</bool>
+    
 </resources>
