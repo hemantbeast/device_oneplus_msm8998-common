@@ -46,4 +46,7 @@
 
     <!-- Device usb fast charge path -->
     <string name="pathUsbFastCharge">/sys/kernel/fast_charge/force_fast_charge</string>
+
+    <!-- Device usb fast charge path -->
+    <string name="pathUsbFastCharge">/sys/kernel/fast_charge/force_fast_charge</string>
 </resources>
