@@ -16,6 +16,8 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage/hardware/oneplus/OneplusParts
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -391,7 +393,8 @@ PRODUCT_PACKAGES += \
 
 # Tri-state-key
 PRODUCT_PACKAGES += \
-    KeyHandler
+    OneplusParts \
+    TouchGestures
 
 # Trust HAL
 PRODUCT_PACKAGES += \
