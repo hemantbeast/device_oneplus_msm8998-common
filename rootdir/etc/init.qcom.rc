@@ -312,7 +312,8 @@ on boot
 
     start vendor.qcrild
     start vendor.qcrild2
-    
+    start vendor.dataqti
+
     # Vibrator permissions
     chown system system /sys/class/leds/vibrator/vmax_mv
     chmod 0660 /sys/class/leds/vibrator/vmax_mv
