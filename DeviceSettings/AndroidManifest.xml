@@ -32,6 +32,7 @@
         android:targetSdkVersion="29" />
 
     <application
+        android:persistent="true"
         android:icon="@drawable/ic_settings_device"
         android:label="@string/device_title"
         android:theme="@style/Theme.SubSettingsBase">
