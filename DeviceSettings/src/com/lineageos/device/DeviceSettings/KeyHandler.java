@@ -126,6 +126,12 @@ public class KeyHandler extends Service {
     }
 
     @Override
+    public void onDestroy() {
+        this.unregisterReceiver(mBroadcastReceiver);
+        mAlertSliderEventObserver.stopObserving();
+    }
+
+    @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
