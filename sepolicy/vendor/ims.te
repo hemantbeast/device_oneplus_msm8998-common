@@ -1,0 +1,7 @@
+# Allow various IMS diag_device rw permissions to avoid crashing 
+# and spamming system
+
+allow ims diag_device:chr_file { read write open }; 
+allow netmgrd diag_device:chr_file { read write open };
+allow vendor_dpmd diag_device:chr_file { read write open }; 
+allow cnd diag_device:chr_file { read write open }; 
