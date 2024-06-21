@@ -1,7 +1,8 @@
-# Allow various IMS diag_device rw permissions to avoid crashing 
-# and spamming system
+# Allow various IMS domains to use diag to avoid crashing 
+# and/or spamming system
 
-allow ims diag_device:chr_file { read write open }; 
-allow netmgrd diag_device:chr_file { read write open };
-allow vendor_dpmd diag_device:chr_file { read write open }; 
-allow cnd diag_device:chr_file { read write open }; 
+diag_use(ims)
+diag_use(netmgrd)
+diag_use(vendor_dpmd)
+diag_use(cnd)
+diag_use(hal_rcsservice)
