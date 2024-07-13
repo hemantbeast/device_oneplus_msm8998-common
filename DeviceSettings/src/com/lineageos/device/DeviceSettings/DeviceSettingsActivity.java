@@ -20,16 +20,17 @@ package com.lineageos.device.DeviceSettings;
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
+import com.android.settingslib.collapsingtoolbar.R;
 
 public class DeviceSettingsActivity extends CollapsingToolbarBaseActivity {
+    private static final String TAG_SETTINGS = "device_settings";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction()
-                .add(R.id.content_frame, new DeviceSettings())
+                .replace(R.id.content_frame, new DeviceSettings(), TAG_SETTINGS)
                 .commit();
     }
 }
