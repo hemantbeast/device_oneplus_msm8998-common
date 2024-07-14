@@ -141,7 +141,8 @@ PRODUCT_PACKAGES += \
 
 # Device Settings
 PRODUCT_PACKAGES += \
-    DeviceSettings
+    DeviceSettings \
+    GrapheneCamera
 
 # Display
 PRODUCT_PACKAGES += \
