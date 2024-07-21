@@ -1,8 +1,8 @@
-allow system_app proc_touchpanel:dir { search };
-allow system_app proc_touchpanel:file { rw_file_perms };
+allow system_app proc_touchpanel:dir search;
+allow system_app proc_touchpanel:file rw_file_perms;
 
-allow system_app proc_flicker_free:dir { search };
-allow system_app proc_flicker_free:file { rw_file_perms };
+allow system_app proc_flicker_free:dir search;
+allow system_app proc_flicker_free:file rw_file_perms;
 
 allow system_app sysfs_graphics:dir search;
 allow system_app sysfs_graphics:file rw_file_perms;
@@ -11,10 +11,11 @@ allow system_app sysfs_livedisplay_tuneable:dir search;
 allow system_app sysfs_livedisplay_tuneable:file rw_file_perms;
 
 allow system_app sysfs_leds:dir search;
+allow system_app sysfs_vibrator:dir search;
 allow system_app sysfs_vibrator:file rw_file_perms;
 
-allow system_app sysfs_fastcharge:dir { search };
-allow system_app sysfs_fastcharge:file { rw_file_perms };
+allow system_app sysfs_fastcharge:dir search;
+allow system_app sysfs_fastcharge:file rw_file_perms;
 
-allow system_app sysfs_audiogain:dir { search };
-allow system_app sysfs_audiogain:file { rw_file_perms };
+allow system_app sysfs_audiogain:dir search;
+allow system_app sysfs_audiogain:file rw_file_perms;
