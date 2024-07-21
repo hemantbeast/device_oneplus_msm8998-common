@@ -309,6 +309,10 @@ on boot
     start vendor.qcrild2
     start vendor.dataqti
 
+    # Swap Hardware Keys
+    chown system system /proc/s1302/key_rep
+    chmod 0660 /proc/s1302/key_rep
+
     # Vibrator permissions
     chown system system /sys/class/leds/vibrator/vmax_mv
     chmod 0660 /sys/class/leds/vibrator/vmax_mv
